@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
 	public void SpawnEmoji() //Spawn a new emoji
 	{
 		Vector3 spawnPos = transform.position;	//Initialize the spawn pos to this object's position
-		Texture spawnVisual = allEmojis[Random.Range(0, allEmojis.Length + 1)];	//Select a random texture from all the available ones
+		Texture spawnVisual = allEmojis[Random.Range(0, allEmojis.Length)];	//Select a random texture from all the available ones
 		spawnPos.z = Random.Range(spawnZone.bounds.min.z, spawnZone.bounds.max.z);	//Set the z position we spawn at to a random position within the box collider
 
 		GameObject newEmoji = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);	//Spawn in the new emoji object

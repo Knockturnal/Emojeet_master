@@ -77,7 +77,7 @@ public class TouchControlsManager : MonoBehaviour	//This class picks up touches 
 
 		#else    //If we are not in the Unity editor (the assumption is that we only build for mobile), we can check for touches
 
-		if(Input.touchCount == 0) //There is exactly one touch
+		if(Input.touchCount == 1) //There is exactly one touch
 		{
 			currentTouch = Input.GetTouch(0); //We get the info from that one touch and store it in a variable
 		}
@@ -98,8 +98,6 @@ public class TouchControlsManager : MonoBehaviour	//This class picks up touches 
 				OnTouchUp?.Invoke(currentTouch);
 				break;
 			case TouchPhase.Canceled:
-				break;
-			default:
 				break;
 		}
 	}
